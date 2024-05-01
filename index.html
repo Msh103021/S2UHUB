@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPAR2U Calculator</title>
+    
+    <link rel="icon" href="S2UImage.png" type="image/png">
+
+   
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>SPAR2U Calculator :-{ </h1>
+            <div class="content">
+                <div class="store">
+                    <label for="storeName">Store Name</label>
+                    <input type="text" id="textInput" name="textInput" required autocomplete="off" oninput="predictiveSearch()">
+                    <ul id="suggestionsDropdown"></ul>
+                </div>
+              
+                <div class="status">
+    
+    
+                    <label class="container">
+                        <input type="radio" name="radio" id="f" checked ><p class="text">Order Delivered</p>
+                          <span class="checkmark"></span>
+                        </label>
+  
+                        <label class="container">
+                          <input type="radio" name="radio" id="f" ><p class="text">Order Cancelled</p>
+                            <span class="checkmark"></span>
+                          </label>
+    
+                </div>
+
+                <div class="input">
+                    <label for="Order" title="You can find the Shipment ID on the Naveo Hub">Order Number (Shipment ID) </label>
+                    <input type="number" title="You can find the Shipment ID on the Naveo Hub" id="orderInput" name="orderInput">
+                </div>
+
+
+                <div class="containerHW">
+                    <div class="inputH">
+                        <label for="Total">Total Amount</label>
+                        <input type="number" id="Total" required>
+                    </div>
+                    <div class="inputW">
+                        <label for="Captured">Captured Amount</label>
+                        <input type="number" id="Captured" required>
+
+                    </div>
+                    
+                </div>
+                
+                    <div id="textFieldContainer"></div>
+                    <p id="storeNameOutput"></p>
+                    <p id="orderNumberOutput"></p>
+                    <p id="reservationFeeOutput"></p>
+                    <p id="totalOutput"></p>
+                    <p id="settlementAmountOutput"></p>
+                    <p id="refundAmountOutput"></p>
+                    <p id="warningMessage" class="warning"></p>
+
+                <div class="button-container">
+                    <button id="copyAndSendButton" disabled>Share</button>
+                    <button id="calculateButton">Calculate</button>
+                    <button id="clearButton">Clear</button>
+                </div>
+                <div id="popupContainer" class="popup">
+                    <div class="popup-overlay"></div>
+                    <div class="popup-content">
+                        <span id="popupClose" class="popup-close">&times;</span>
+                        <pre id="popupOutput"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
